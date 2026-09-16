@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TripSketch プライバシーポリシー</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; }
+  :root {
+    --paper: #F1F4F3;
+    --paper-raised: #FFFFFF;
+    --ink: #17232C;
+    --ink-soft: #5C6B72;
+    --line: #D8E0DE;
+    --amber: #E3A94D;
+    --amber-soft: #FBEBD2;
+    --brick: #C24C33;
+    --link: #3A6B66;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14181A;
+      --paper-raised: #1C2224;
+      --ink: #EDEFEF;
+      --ink-soft: #9DA9AC;
+      --line: #333B3D;
+      --amber: #E9BD73;
+      --amber-soft: #3A2F1C;
+      --brick: #E17C63;
+      --link: #6FB3AA;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14181A;
+    --paper-raised: #1C2224;
+    --ink: #EDEFEF;
+    --ink-soft: #9DA9AC;
+    --line: #333B3D;
+    --amber: #E9BD73;
+    --amber-soft: #3A2F1C;
+    --brick: #E17C63;
+    --link: #6FB3AA;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .brand {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .brand small {
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+  }
+
+  .meta {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(1.7rem, 4vw, 2.15rem);
+    font-weight: 600;
+    text-wrap: balance;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+
+  .lede {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 56ch;
+    margin: 0 0 44px;
+  }
+
+  nav.toc {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 48px;
+  }
+
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+
+  nav.toc ol {
+    columns: 2;
+    column-gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: toc;
+  }
+
+  nav.toc li {
+    counter-increment: toc;
+    break-inside: avoid;
+    margin-bottom: 8px;
+    font-size: 0.88rem;
+  }
+
+  nav.toc li::before {
+    content: counter(toc) ". ";
+    color: var(--amber);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+
+  nav.toc a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  nav.toc a:hover {
+    color: var(--link);
+    text-decoration: underline;
+  }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 20px;
+  }
+
+  section h2 {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 1.28rem;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section h2 .num {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--paper-raised);
+    background: var(--brick);
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  section h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin: 22px 0 8px;
+    color: var(--ink);
+  }
+
+  p, li {
+    font-size: 0.94rem;
+    color: var(--ink);
+  }
+
+  ul, ol.plain {
+    padding-left: 1.3em;
+    margin: 10px 0;
+  }
+
+  ul li, ol.plain li {
+    margin-bottom: 6px;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 6px;
+    font-size: 0.88rem;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .data-table thead, .data-table tbody { display: table; width: 100%; table-layout: fixed; }
+
+  .data-table th, .data-table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  .data-table th {
+    color: var(--ink-soft);
+    font-weight: 600;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .data-table td:first-child, .data-table th:first-child { width: 30%; }
+
+  .pill {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: var(--amber-soft);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+
+  .callout {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--brick);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    font-size: 0.89rem;
+    color: var(--ink-soft);
+    margin: 14px 0;
+  }
+
+  .contact-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 24px;
+  }
+
+  .contact-card dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 0;
+  }
+
+  .contact-card dt {
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+  }
+
+  .contact-card dd {
+    margin: 0;
+    font-size: 0.94rem;
+  }
+
+  .contact-card a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  .contact-card a:hover { text-decoration: underline; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 56px;
+    padding-top: 20px;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 560px) {
+    nav.toc ol { columns: 1; }
+    header.masthead { flex-direction: column; gap: 4px; }
+    .meta { text-align: left; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap">
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="brand">TripSketch<small>旅程プランナー</small></div>
+    <div class="meta">制定日: 2026年9月14日<br>最終改定日: 2026年9月14日</div>
+  </header>
+
+  <h1>プライバシーポリシー</h1>
+  <p class="lede">
+    TripSketch - 旅程プランナー(以下「本アプリ」)は、複数人で旅のしおりを編集できるiPhoneアプリです。
+    本ポリシーは、本アプリの利用にあたって取得する情報の種類、利用目的、第三者への提供状況、
+    および利用者の権利についてご説明するものです。
+  </p>
+
+  <nav class="toc" aria-label="目次">
+    <p>目次</p>
+    <ol>
+      <li><a href="#collect">収集する情報</a></li>
+      <li><a href="#not-collect">取得しない情報</a></li>
+      <li><a href="#purpose">利用目的</a></li>
+      <li><a href="#third-party">第三者提供・委託先</a></li>
+      <li><a href="#tracking">トラッキングの許諾(ATT)</a></li>
+      <li><a href="#retention">保存期間・削除</a></li>
+      <li><a href="#rights">利用者の権利</a></li>
+      <li><a href="#children">お子様のご利用について</a></li>
+      <li><a href="#security">安全管理措置</a></li>
+      <li><a href="#changes">本ポリシーの変更</a></li>
+      <li><a href="#contact">お問い合わせ窓口</a></li>
+    </ol>
+  </nav>
+
+  <section id="collect">
+    <h2><span class="num">01</span>収集する情報</h2>
+    <p>本アプリでは、サービスの提供に必要な範囲で以下の情報を取得します。</p>
+
+    <h3>アカウント情報</h3>
+    <p>
+      本アプリはメールアドレスやパスワードの登録を必要としない
+      <strong>匿名認証(Supabase Auth)</strong>を採用しています。初回起動時に、
+      個人を特定できないランダムなID(匿名ユーザーID)が自動的に発行され、端末に保存されます。
+    </p>
+
+    <h3>旅程データ(利用者が入力するコンテンツ)</h3>
+    <p>旅のしおりを作成・編集する過程で、以下の情報を利用者ご自身が入力します。これらは招待リンクで参加した旅程の他の参加者と共有されます。</p>
+    <ul>
+      <li>旅程のタイトル・日程</li>
+      <li>予定のタイトル・時刻・場所名・地図アプリのリンク・メモ</li>
+      <li>参加者の表示名(例:「あなた」「ゲスト」など、利用者が変更可能)・識別用のカラー</li>
+    </ul>
+
+    <h3>広告に関する情報</h3>
+    <p>
+      広告表示のため、Google Mobile Ads SDK(Google AdMob)を通じて以下の情報が
+      Google LLCに送信されます。
+    </p>
+    <table class="data-table">
+      <thead>
+        <tr><th>項目</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>広告識別子(IDFA)</td><td>トラッキングの許諾(ATT)に同意した場合のみ、パーソナライズ広告のために使用</td></tr>
+        <tr><td>デバイス情報</td><td>OSバージョン・端末モデル等、広告配信の最適化のために使用</td></tr>
+        <tr><td>IPアドレス</td><td>おおよその地域判定・不正広告クリック対策のために使用</td></tr>
+        <tr><td>広告の表示・クリック履歴</td><td>広告効果測定のために使用</td></tr>
+      </tbody>
+    </table>
+    <p class="callout">
+      トラッキングの許諾を拒否した場合でも広告自体は表示されますが、
+      個人の興味関心に基づかない非パーソナライズ広告が配信されます。
+    </p>
+  </section>
+
+  <section id="not-collect">
+    <h2><span class="num">02</span>取得しない情報</h2>
+    <p>本アプリは以下の情報を取得しません。</p>
+    <ul>
+      <li>氏名・生年月日・電話番号などメールアドレス以外の連絡先情報 <span class="pill">未取得</span></li>
+      <li>現在地情報(地図検索・移動時間の算出はMapKitの地名検索機能を用いており、端末の位置情報は使用しません) <span class="pill">未取得</span></li>
+      <li>連絡先(アドレス帳)・写真ライブラリへのアクセス <span class="pill">未取得</span></li>
+    </ul>
+  </section>
+
+  <section id="purpose">
+    <h2><span class="num">03</span>利用目的</h2>
+    <ul>
+      <li>旅程データの保存、および招待された参加者間でのリアルタイム共有・編集を実現するため</li>
+      <li>本アプリの不具合調査・品質改善のため</li>
+      <li>広告の配信、および広告の効果測定・不正防止のため</li>
+      <li>利用者からのお問い合わせへの対応のため</li>
+    </ul>
+  </section>
+
+  <section id="third-party">
+    <h2><span class="num">04</span>第三者提供・委託先</h2>
+    <p>取得した情報の処理を、以下の事業者に委託または提供しています。</p>
+    <table class="data-table">
+      <thead>
+        <tr><th>委託・提供先</th><th>目的・取り扱う情報</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Supabase, Inc.</td>
+          <td>データベース・認証基盤。匿名ユーザーID、旅程データの保存・同期のため。</td>
+        </tr>
+        <tr>
+          <td>Google LLC(Google AdMob)</td>
+          <td>広告配信。広告識別子・デバイス情報等の取り扱いについては
+            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Googleのパートナー向けポリシー</a>
+            もあわせてご確認ください。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      上記委託先はいずれも国外(米国)の事業者です。法令に基づき適切な取り扱いを行っている
+      事業者を選定しています。上記以外の第三者への情報提供は、法令に基づく場合を除き行いません。
+    </p>
+  </section>
+
+  <section id="tracking">
+    <h2><span class="num">05</span>トラッキングの許諾(ATT)</h2>
+    <p>
+      本アプリは初回の広告表示に先立ち、iOSの「トラッキング許諾(App Tracking Transparency)」
+      ダイアログを表示し、「広告をよりあなたに合った内容にするために利用します」という説明とともに
+      同意を確認します。許諾するかどうかは、いつでも「設定 &gt; プライバシーとセキュリティ &gt;
+      トラッキング」から変更できます。
+    </p>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num">06</span>保存期間・削除</h2>
+    <p>
+      旅程データは、利用者が明示的に削除するか、本ポリシー末尾の連絡先へ削除を依頼するまでの間、
+      サービス提供のために保存されます。現在アプリ内から旅程を直接削除する機能を準備中のため、
+      それまでの間は下記お問い合わせ窓口よりご連絡いただければ、対象の旅程データを削除いたします。
+    </p>
+  </section>
+
+  <section id="rights">
+    <h2><span class="num">07</span>利用者の権利</h2>
+    <p>
+      利用者は、ご自身に関する情報について、開示・訂正・利用停止・削除を求めることができます。
+      本アプリは匿名認証のためアカウントに氏名等の連絡先情報を保持していませんので、
+      請求にあたっては対象の旅程名やお心当たりのある情報を添えて下記窓口までご連絡ください。
+      合理的な期間内に対応いたします。
+    </p>
+  </section>
+
+  <section id="children">
+    <h2><span class="num">08</span>お子様のご利用について</h2>
+    <p>
+      本アプリは家族・友人同士の旅行計画を主な用途としており、年齢を限定するものではありませんが、
+      未成年の方がご利用になる場合は保護者の方の同意・監督のもとでご利用ください。
+      本アプリは13歳未満を主な対象とするサービスではありません。
+    </p>
+  </section>
+
+  <section id="security">
+    <h2><span class="num">09</span>安全管理措置</h2>
+    <p>
+      通信は暗号化(TLS)された経路で行われ、旅程データへのアクセスはSupabaseの行レベル
+      セキュリティ(RLS)により、当該旅程の参加者のみに制限されています。
+      情報の紛失・漏えい等を防止するため、適切な安全管理措置を講じます。
+    </p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">10</span>本ポリシーの変更</h2>
+    <p>
+      本ポリシーの内容は、法令の変更やサービス内容の変更に伴い、予告なく改定することがあります。
+      重要な変更を行う場合は、本ページ上でお知らせします。変更後の内容は、本ページに掲載した時点から
+      効力を生じるものとします。
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">11</span>お問い合わせ窓口</h2>
+    <p>個人情報の取り扱いに関するお問い合わせ、開示・削除等のご請求は、以下までご連絡ください。</p>
+    <div class="contact-card">
+      <dl>
+        <dt>運営者</dt>
+        <dd>TripSketch - 旅程プランナー</dd>
+        <dt>連絡先</dt>
+        <dd><a href="mailto:ysk113a@gmail.com">ysk113a@gmail.com</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 TripSketch</span>
+    <span>制定日 2026年9月14日</span>
+  </footer>
+
+</div>
+</body>
+</html>
