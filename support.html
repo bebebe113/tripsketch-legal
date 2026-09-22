@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TripSketch サポート</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; }
+  :root {
+    --paper: #F1F4F3;
+    --paper-raised: #FFFFFF;
+    --ink: #17232C;
+    --ink-soft: #5C6B72;
+    --line: #D8E0DE;
+    --amber: #E3A94D;
+    --amber-soft: #FBEBD2;
+    --brick: #C24C33;
+    --link: #3A6B66;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14181A;
+      --paper-raised: #1C2224;
+      --ink: #EDEFEF;
+      --ink-soft: #9DA9AC;
+      --line: #333B3D;
+      --amber: #E9BD73;
+      --amber-soft: #3A2F1C;
+      --brick: #E17C63;
+      --link: #6FB3AA;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14181A;
+    --paper-raised: #1C2224;
+    --ink: #EDEFEF;
+    --ink-soft: #9DA9AC;
+    --line: #333B3D;
+    --amber: #E9BD73;
+    --amber-soft: #3A2F1C;
+    --brick: #E17C63;
+    --link: #6FB3AA;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .brand {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .brand small {
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+  }
+
+  h1 {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(1.7rem, 4vw, 2.15rem);
+    font-weight: 600;
+    text-wrap: balance;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+
+  .lede {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 56ch;
+    margin: 0 0 44px;
+  }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 20px;
+  }
+
+  section h2 {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 1.28rem;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section h2 .num {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--paper-raised);
+    background: var(--brick);
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  section h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin: 22px 0 8px;
+    color: var(--ink);
+  }
+
+  p, li {
+    font-size: 0.94rem;
+    color: var(--ink);
+  }
+
+  ul {
+    padding-left: 1.3em;
+    margin: 10px 0;
+  }
+
+  ul li {
+    margin-bottom: 6px;
+  }
+
+  a { color: var(--link); }
+
+  .contact-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 24px;
+  }
+
+  .contact-card dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 0;
+  }
+
+  .contact-card dt {
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+  }
+
+  .contact-card dd {
+    margin: 0;
+    font-size: 0.94rem;
+  }
+
+  .contact-card a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  .contact-card a:hover { text-decoration: underline; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 56px;
+    padding-top: 20px;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer a { color: var(--ink-soft); }
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap">
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="brand">TripSketch<small>旅程プランナー</small></div>
+  </header>
+
+  <h1>サポート</h1>
+  <p class="lede">
+    TripSketch - 旅程プランナーのご利用でお困りの際は、このページをご確認ください。
+    解決しない場合は、ページ下部の連絡先までお問い合わせください。
+  </p>
+
+  <section id="faq">
+    <h2><span class="num">01</span>よくある質問</h2>
+
+    <h3>旅程に他の人を招待するには?</h3>
+    <p>
+      旅程画面右上の「招待リンクをコピー」から招待リンクをコピーし、LINEやメッセージなどで
+      相手に送ってください。相手がリンクを開くと、自動的にその旅程に参加できます。
+      アカウント登録は不要です。
+    </p>
+
+    <h3>旅程や予定を削除したい</h3>
+    <p>
+      予定(タイムライン上の各カード)は、カード右上の「✕」から削除できます。
+      旅程全体を削除したい場合は、ホーム画面の旅程一覧で対象の旅程を長押しし、
+      「旅程を削除」を選択してください。どちらも削除前に確認画面が表示され、
+      一度削除すると元に戻せません。
+    </p>
+
+    <h3>旅程からうまく抜けられない・誤って削除してしまった</h3>
+    <p>
+      上記の方法で解決しない場合や、誤って削除してしまったデータの復旧をご希望の場合は、
+      下記の連絡先まで、対象の旅程名や状況を添えてご連絡ください。
+    </p>
+
+    <h3>広告について</h3>
+    <p>
+      本アプリはGoogle AdMobによる広告で運営されています。広告の表示方法や、広告配信に
+      関連する情報の取り扱いについては
+      <a href="./index.html#collect">プライバシーポリシー</a>をご確認ください。
+    </p>
+
+    <h3>地図アプリのリンクが開けない</h3>
+    <p>
+      予定編集パネルの「地図アプリのリンクを貼り付け」欄にGoogle Mapsなどのリンクを貼ると、
+      予定カードの📍アイコンからそのリンク先を開けます。開けない場合は、貼り付けたリンクが
+      正しいURLか(https://から始まっているか)ご確認ください。
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">02</span>お問い合わせ</h2>
+    <p>上記で解決しない不具合のご報告、ご要望、その他お問い合わせは以下までご連絡ください。</p>
+    <div class="contact-card">
+      <dl>
+        <dt>運営者</dt>
+        <dd>TripSketch - 旅程プランナー</dd>
+        <dt>連絡先</dt>
+        <dd><a href="mailto:ysk113a@gmail.com">ysk113a@gmail.com</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 TripSketch</span>
+    <span><a href="./index.html">プライバシーポリシー</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
